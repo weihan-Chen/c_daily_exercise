@@ -1,9 +1,9 @@
 /*
- * @Description: ·Ö×éÆ÷
+ * @Description: åˆ†ç»„å™¨
  * @Author: weihan-Chen
  * @Github: https://github.com/weihan-Chen
  * @Date: 2020-04-29 17:28:56
- * @LastEditTime: 2020-04-29 18:17:18
+ * @LastEditTime: 2020-04-30 00:16:28
  */
 #include <stdio.h>
 void main()
@@ -11,13 +11,13 @@ void main()
     int people_summary, group_summary;
     while (1)
     {
-        printf("Ò»¹²µÄÈËÊý£º");
+        printf("äººæ•°ï¼š");
         scanf("%d", &people_summary);
-        printf("×éÊý£º");
+        printf("ç»„æ•°ï¼š");
         scanf("%d", &group_summary);
         if (people_summary % group_summary != 0)
         {
-            printf("²»ÄÜºÏÀí·Ö×é£¬ÖØÐÂÊäÈëÈËÊýÓë×éÊý");
+            printf("ï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         else
         {
