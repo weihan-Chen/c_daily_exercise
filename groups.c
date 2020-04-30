@@ -1,9 +1,9 @@
 /*
- * @Description: åˆ†ç»„å™¨
+ * @Description: ·Ö×éÆ÷
  * @Author: weihan-Chen
  * @Github: https://github.com/weihan-Chen
  * @Date: 2020-04-29 17:28:56
- * @LastEditTime: 2020-04-30 14:33:00
+ * @LastEditTime: 2020-04-30 14:42:52
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,6 +13,8 @@ int main()
 	srand((unsigned)time(NULL));
 	int people_summary = 0, group_summary = 0;
 	int k;
+	printf("ÕâÊÇÒ»¸öËæ»ú·Ö×éÆ÷£¬ÊäÈëÈËÊıºÍ×éÊı£¬¾Í¿ÉÒÔµÃµ½Ëæ»úµÄ·Ö×éÀ²~");
+	system("pause");
 	while (1)
 	{
 		printf("how many people:");
@@ -21,7 +23,7 @@ int main()
 		scanf("%d", &group_summary);
 		if (people_summary % group_summary != 0)
 		{
-			printf("ä¸èƒ½åˆç†åˆ†ç»„ï¼Œè¯·é‡æ–°è¾“å…¥");
+			printf("²»ÄÜºÏÀí·Ö×é£¬ÇëÖØĞÂÊäÈë");
 		}
 		else
 		{
@@ -64,6 +66,6 @@ int main()
 			}
 		}
 	}
-	getchar();
+	system("pause");
 	return 0;
 }
