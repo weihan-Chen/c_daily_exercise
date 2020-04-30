@@ -3,7 +3,7 @@
  * @Author: weihan-Chen
  * @Github: https://github.com/weihan-Chen
  * @Date: 2020-04-29 17:28:56
- * @LastEditTime: 2020-04-30 13:57:55
+ * @LastEditTime: 2020-04-30 14:33:00
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,5 +64,6 @@ int main()
 			}
 		}
 	}
+	getchar();
 	return 0;
 }
