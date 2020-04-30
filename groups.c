@@ -3,28 +3,66 @@
  * @Author: weihan-Chen
  * @Github: https://github.com/weihan-Chen
  * @Date: 2020-04-29 17:28:56
- * @LastEditTime: 2020-04-30 00:19:14
+ * @LastEditTime: 2020-04-30 13:57:55
  */
 #include <stdio.h>
-void main()
+#include <stdlib.h>
+#include <time.h>
+int main()
 {
-    int people_summary, group_summary;
-    while (1)
-    {
-        printf("人数：");
-        scanf("%d", &people_summary);
-        printf("组数：");
-        scanf("%d", &group_summary);
-        if (people_summary % group_summary != 0)
-        {
-            printf("���ܺ������飬������������������");
-        }
-        else
-        {
-            break;
-        }
-    }
-    int people_group[2][people_summary];
+	srand((unsigned)time(NULL));
+	int people_summary = 0, group_summary = 0;
+	int k;
+	while (1)
+	{
+		printf("how many people:");
+		scanf("%d", &people_summary);
+		printf("how many groups:");
+		scanf("%d", &group_summary);
+		if (people_summary % group_summary != 0)
+		{
+			printf("不能合理分组，请重新输入");
+		}
+		else
+		{
+			break;
+		}
+	}
+	int people_group[2][people_summary],
+		group_people[group_summary];
+	for (int i = 0; i < group_summary; i++)
+	{
+		group_people[i] = 0;
+	}
 
-    return;
+	int rand_group_number = 0;
+	for (k = 0; k < people_summary; k++)
+	{
+		people_group[0][k] = k + 1;
+		people_group[1][k] = k / (people_summary / group_summary) + 1;
+	}
+	for (k = 0; k < people_summary;)
+	{
+		rand_group_number = rand() % group_summary + 1;
+		group_people[rand_group_number - 1] += 1;
+		if (group_people[rand_group_number - 1] > people_summary / group_summary)
+		{
+			group_people[rand_group_number - 1] -= 1;
+			continue;
+		}
+		people_group[1][k] = rand_group_number;
+		k += 1;
+	}
+	for (k = 0; k < group_summary; k++)
+	{
+		printf("\ngroup number:%d\n", k + 1);
+		for (int i = 0; i < people_summary; i++)
+		{
+			if (people_group[1][i] == k + 1)
+			{
+				printf("%d ", people_group[0][i]);
+			}
+		}
+	}
+	return 0;
 }
