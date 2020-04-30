@@ -3,7 +3,7 @@
  * @Author: weihan-Chen
  * @Github: https://github.com/weihan-Chen
  * @Date: 2020-04-29 17:28:56
- * @LastEditTime: 2020-04-30 14:42:52
+ * @LastEditTime: 2020-04-30 16:03:26
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,6 +17,7 @@ int main()
 	system("pause");
 	while (1)
 	{
+		/*获取计算要求*/
 		printf("how many people:");
 		scanf("%d", &people_summary);
 		printf("how many groups:");
@@ -32,18 +33,18 @@ int main()
 	}
 	int people_group[2][people_summary],
 		group_people[group_summary];
-	for (int i = 0; i < group_summary; i++)
+	for (int i = 0; i < group_summary; i++) //初始化
 	{
 		group_people[i] = 0;
 	}
 
 	int rand_group_number = 0;
-	for (k = 0; k < people_summary; k++)
+	for (k = 0; k < people_summary; k++) //初始分组
 	{
 		people_group[0][k] = k + 1;
 		people_group[1][k] = k / (people_summary / group_summary) + 1;
 	}
-	for (k = 0; k < people_summary;)
+	for (k = 0; k < people_summary;) //进行随机分组
 	{
 		rand_group_number = rand() % group_summary + 1;
 		group_people[rand_group_number - 1] += 1;
@@ -55,7 +56,7 @@ int main()
 		people_group[1][k] = rand_group_number;
 		k += 1;
 	}
-	for (k = 0; k < group_summary; k++)
+	for (k = 0; k < group_summary; k++) //输出分组结果
 	{
 		printf("\ngroup number:%d\n", k + 1);
 		for (int i = 0; i < people_summary; i++)
